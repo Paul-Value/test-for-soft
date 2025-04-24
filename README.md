@@ -43,10 +43,6 @@ mvn clean install
 java -jar target/test-for-soft-1.0-SNAPSHOT.jar
 ```
 
-Приложение будет доступно на порту 8080:
-
-http://localhost:8080
-
 ## Работа с API
 
 ### Swagger UI
