@@ -78,21 +78,3 @@ java -jar target/test-for-soft-1.0-SNAPSHOT.jar
 | Некорректный формат файла       | 400         | `Error processing Excel file`         |
 | N > количества элементов        | 400         | `N exceeds number of elements in file`|
 | Отрицательное значение N        | 400         | `N must be positive`                  |
-
-## Алгоритм
-
-```java
-public int findNthMinimum(List<Integer> numbers, int n) {
-    PriorityQueue<Integer> maxHeap = new PriorityQueue<>(n, Comparator.reverseOrder());
-    
-    for (int num : numbers) {
-        if (maxHeap.size() < n) {
-            maxHeap.add(num);
-        } else if (num < maxHeap.peek()) {
-            maxHeap.poll();
-            maxHeap.add(num);
-        }
-    }
-    
-    return maxHeap.peek();
-}
